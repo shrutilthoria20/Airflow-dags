@@ -100,7 +100,7 @@ def tutorial_taskflow_api():
 
 
     @task(multiple_outputs=True)
-    def transform(order_data_dict: dict):
+    def transform():
         table_name = context.op_config["table_name"]
         conn, cursor = conn_postgress()
         query = f"SELECT * from chpostgres.public.{table_name};"
@@ -113,7 +113,7 @@ def tutorial_taskflow_api():
         return df
 
     @task()
-    def load(total_order_value: float):
+    def load():
         table_name = context.op_config["table_name"]
         logger = get_dagster_logger()
         database = "TEST_DB"
