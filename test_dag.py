@@ -13,7 +13,7 @@ def first_function_execute():
 
 # Step 3: Creating DAG Object
 dag = DAG(
-    dag_id="first_dag",
+    dag_id="test_dag",
     schedule_interval="@daily",
     default_args={
         "owner":"airflow",
