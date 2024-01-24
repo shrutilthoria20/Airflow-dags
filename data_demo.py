@@ -18,7 +18,7 @@ default_args={        "owner":"airflow",
 
 # Instantiate a DAG
 dag = DAG(
-    dag_id='my_airflow_dag',
+    dag_id='data_dag',
     default_args=default_args,
     description='A simple Airflow DAG with multiple tasks',
     schedule_interval=timedelta(days=1),  # Set the interval at which the DAG should run
